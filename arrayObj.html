@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Array Object</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+<script>
+    const array = [1,2,3];
+    console.log(array);//(3) [1, 2, 3]
+    console.log(typeof(array))//object
+    console.log(Array.isArray(array)); //true
+
+    const arrayObj = {
+        0:1,
+        1:2,
+        2:3
+    }
+    console.log(arrayObj);//{0: 1, 1: 2, 2: 3}
+    console.log(Array.isArray(arrayObj)); //false
+
+
+    // pass by value and pass by reference example
+    let a = 5;
+    let b = a;
+
+    console.log(a);//5
+    console.log(b);//5
+
+    b = b + 5;
+    console.log(b);//10
+//---------------------------------------
+    const obj1 = {
+        user:"Rekha",
+        pass:"Password"
+    }
+    //console.log(obj1);//{user: 'Rekha', pass: 'Password'}
+
+    const obj2 = obj1;
+    //console.log(obj2);//{user: 'Rekha', pass: 'Password'}
+
+    obj2.pass = "preety";
+    console.log(obj2);//{user: 'Rekha', pass: 'preety'}
+    console.log(obj1);//{user: 'Rekha', pass: 'preety'}
+//------------------------------------------------
+    const arr1 = [1,2,3,4];
+    const arr2 = arr1;
+
+    console.log(arr1);//[1, 2, 3, 4]
+    console.log(arr2);//[1, 2, 3, 4]
+//---------------------------------------------------
+let like = 100;
+const youtube = {
+    name:"javascript",
+    watch:5000,
+}
+
+const Rekha = (a,b) =>{
+       a= 4500;
+       b.watch = 5689000;
+}
+Rekha(like,youtube);
+
+console.log(like);//100 // pass by value
+console.log(youtube.watch);//5689000 // pass by reference
+
+</script>
+</body>
+</html>

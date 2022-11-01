@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>hoising</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+<script>
+    console.log(this);// refer global windows object
+
+    function thisEx(){
+        var a = "hello";
+        console.log(a);//hello
+        console.log(this);//refer global windows object
+    }
+    thisEx();
+
+    const rekha = {
+        name : "Rekha Mahto",
+        Education : "B.E.",
+
+        sum : function(){
+            add = 3+4;
+            console.log(add);//{name: 'Rekha Mahto', Education: 'B.E.', sum: ƒ}
+            console.log(this);// object    //this refer to owner (rekha func) object
+
+            function child(){
+                var name = "Rekha";
+                console.log("child method " + name);//child method Rekha
+                console.log(this);// object    //this refer to owner (rekha func) object
+            }
+            child();
+        }
+    }
+    rekha.sum();
+</script>
+</body>
+</html>

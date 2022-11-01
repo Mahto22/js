@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Basic Logic Question</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style></style>
+</head>
+<body>
+    <script>
+        //1
+        //let a = [];
+        //let b = [];
+        // whenever comparing two array at that time comapring array memory location,so both are not in same location,that why giving false in both case
+        //console.log(a==b);//false
+        //console.log(a===b);//false
+
+        //2
+        // let a = [];
+        // let b = a;
+        // console.log(a==b);//true
+        // console.log(a===b);//true
+        // both have same memory location
+
+        //3
+        // let a = [20];
+        // let b = [20];
+        // console.log(a[0]==b[0]);//true
+        // console.log(a[0]===b[0]);//true
+        // comparing element value not a memory location comarision
+
+        //4
+        //let z = [1,2,3,4];
+        //let a = {name:'anil'};
+        //console.log(...z);//1234 // convert array to string
+        // ... means distructing
+
+        //5
+        //console.log(typeof(NaN));//number
+
+       //6
+       //let data = 10 - -10;// 10 - (-10) = 10 + 10 = 20
+       //console.log(data);// 20
+
+       //7
+       //const set = new Set([1,1,2,3,4]);
+       // Set() remove the dublicate element 
+       //console.log(set);//{1, 2, 3, 4}
+
+       //8
+       //let data = {name:"Rekha"};
+       //console.log(delete data.name);//true
+       // in console just check name property deleted or not if yes then return TRUE else return FALSE
+       //console.log(data)// {}
+
+       //9
+       //let data = {name:"Rekha"};
+       //console.log(delete data);//false
+       // we can't delete the data ,we can just delete the properity
+
+       //10
+       //const data = ["Rekha","Swati","Prachi"];
+       //const [y] = data;
+       //console.log(y);//
+       // y take 1st place of array
+
+       //11
+       // want a 2nd value of array
+       //const data = ["Rekha","Swati","Prachi"];
+       //const [,y] = data;
+       //console.log(y);//Swati
+
+       //12
+       // how to get name properity without . operator??
+       //const data = {name: "Rekha",age:26,skill: "JavaScript"};
+       //console.log(data['name']);// Rekha
+
+          // OR
+          
+       //const {name} = data;
+       //console.log(name);// Rekha
+
+       //13
+       // want to merge both array ,how to do??
+       //let data = {name:"Rekha",age:26,skill:"Angular"};
+       //let info = {city:"Nagpur",mail:"rekha@gmail.com"};
+       //data1= {...data,...info};
+       //console.log(data1);//{name: 'Rekha', age: 26, skill: 'Angular', city: 'Nagpur', mail: 'rekha@gmail.com'}
+
+      //14
+      //let data = {name:"Rekha",age:26,skill:"Angular"};
+      //let info = {city:"Nagpur",mail:"rekha@gmail.com"};
+      //data1= {data,...info};
+      //console.log(data1);//data: {name:"Rekha",age:26,skill:"Angular"}, city: 'Nagpur', mail: 'rekha@gmail.com'}
+      
+      //15
+      // whick skill value will be print
+      //let data = {name:"Rekha",age:26,skill:"Angular"};
+      //let info = {city:"Nagpur",skill:"JavaScript",mail:"rekha@gmail.com"};
+      //data1= {...data,...info};
+      //console.log(data1);//{name: 'Rekha', age: 26, skill: 'JavaScript', city: 'Nagpur', mail: 'rekha@gmail.com'}
+
+      //16
+      //const name = "Rekha";
+      //console.log(name());//Uncaught TypeError: name is not a function
+      //console.log(name);//Rekha
+
+      //17
+      //const result = false || {} || null;
+      //console.log(result);// {}
+      // because false consider a -ve value so, next is +ve value that why print {}
+
+      //18
+      //const result = null || false || '';
+      //console.log(result);// '' = empty will show in screen output
+
+      //const result1 = [] || 0 || true;
+      //console.log(result1);// []
+     
+      //19
+      //console.log(Promise.resolve(5));//Promise {<fulfilled>: 5}
+       
+      //console.log('❤️' === '❤️');//true
+      
+      //20
+      //what this method will do??
+      //JSON.parse();
+      //Option
+      //A:Parse JSON to a javascript value
+      //B:Parse a javascript object to JSON
+      //C:Parse any javascript value to JSON
+      //D: Parse JSON to a javascript object only
+
+      //Answer: A
+
+      //21
+      //let name = "Rekha";
+      //function getName(){
+       // console.log(name);//Cannot access 'name' before initialization
+        // in case of Let ,we can't initialize varible before declare
+        // but in case of Var we can initialize variable before declare
+      //  let name = "Swati";
+      //}
+      //getName();
+
+      //22
+      //let name = "Rekha";
+      //function getName(){
+       // console.log(name);// Rekha
+        // let is block scope , and also outerside let can access but innerside let can't access
+      //}
+      //getName();
+
+      //23
+      //console.log(`${(x =>x)('I Love')} to program`);//I Love to program
+
+      //24
+      //function sumValue(x,y,z){
+       // return x+y+z;
+      //}
+      //A:console.log(sumValue(...[1,2,3]));//----- correct --> 6
+      //B:console.log(sumValue([...[1,2,3]]));
+      //C:console.log(sumValue([...1,2,3]));
+      //D:console.log(sumValue([1,2,3]));
+
+      //25
+      //const name = 'code step by step';
+      //console.log(!typeof name === 'object');//false
+      //console.log(!typeof name === 'string');//false
+      //console.log(!typeof name === false);//true
+      //console.log(!typeof name === 'false');//false
+
+      //26
+    //   const name = "Subscribe";
+    //   const age = 26;
+
+    //   console.log(isNaN(name));//true
+    //   console.log(isNaN(age));//false
+
+      //27
+    //   let person = {name: "Rekha"};
+    //   Object.seal(person);
+    //   console.log(person);//{name: 'Rekha'}
+      // how to modify person object while using seal then??
+
+      // whenever we use seal function we can not add another parameter
+      // in side of person we only modify name value suppose rekha->swati
+
+    //   person.name = "Swati";
+    //   console.log(person);//{name: 'Swati'}
+
+    //28
+    //let data = [2,9,0,10];
+    //remove first place element from array??
+    // data.shift();
+    //console.log(data);//(3) [9, 0, 10]
+    //remove last place element from array??
+    //data.pop();
+    //console.log(data);//(3) [2, 9, 0]
+
+    //29
+    //check any value is odd or even??
+    // function checkValue(a){
+    //     if(a % 2 == 0){
+    //         console.log('Even Number');
+    //     }
+    //     else if(a%2 != 0){
+    //         console.log('Odd Number');
+    //     }
+    //     else{
+    //         console.log('something going wrong!!');
+    //     }
+    // }
+    // checkValue(44);
+
+
+    //30
+    //let data = {name:"Rama"};
+   // delete data.name;
+    //console.log(data);//{}
+
+    //31
+    //let data = " true";
+    //console.log(data)// true;
+    //now question is how to convert data to boolean false value??
+    //console.log(typeof(!data));//boolean
+    //console.log(!data);//false
+    // now again convert in boolean true??
+    //console.log(!!data);//true
+
+    //32
+    // let data = ["Rekha","Swati","Narendra"];
+    // delete data[1];
+    // console.log(data);//(3) ['Rekha', empty, 'Narendra']
+    // console.log(data.length);//3
+
+    //33
+    //let a = [1,2,3,4];
+    //let b = [4,5,6];
+    // how to merge both array ???
+    //let c = [...a,...b];
+    //console.log(c);//[1, 2, 3, 4, 4, 5, 6]
+    //why come 4 two times ,why not come 1 time 4 reason??
+    //because in javascript object value if same two times then print only one value but,
+    // in array both array same value still print two because not consiting same.
+    
+    //34
+    //let c = 3 ** 3;
+    //let c = 3*3;// 3x3= 9
+    //console.log(c);//27 // because 3**3 = 3 cube of 3 = 3x3x3=27
+
+    //35
+    //let a = 2;
+    //setTimeout(()=>{
+    //    console.log(a);//100
+    //},0);
+    //a = 100;
+
+    //36
+    //let a = 2;
+    //let A = 30;
+    //console.log(A);//30 // because in js a & A consider as a two different name, and js varible case-sensitive
+
+    //37
+    //let A10 = "Like";
+    //let 10A = "Hello";
+    //console.log(A10);//Like
+    //console.log(10A);//Invalid or unexpected token
+    // Note: in js varible should not start from number as per js rule
+
+    //38
+    //let a = "Like";
+    //let b = `Like`;
+    //console.log(a===b);//true
+
+    //39
+    //let a =1;
+    //let c = 2;
+    //console.log(--c === a);// true // --c =1 because decrement the value
+    
+    //40
+    //let a = 1;
+    //let b = 1;
+    //let c = 2;
+    //console.log(a === b === --c);// false
+    // reason why false -> 1===1===1 = true===1 = false
+
+    //41
+    //console.log(3*3);//9 -> 3x3
+    //console.log(3**3);//27 -> 3x3x3
+    //console.log(3***3);// error -> *** never work
+
+    //42
+    //console.log(a);//undefine
+    //var a ;
+    //console.log(b);//b is not defined
+    //console.log([[[[]]]]);//[Array(1)]
+
+    //43
+    // how to find OS name in javascript??
+    // Answer: go to console and type -> navigator.platform
+
+    //44
+    // function fruit(){
+    //     console.log(name);//undefine
+    //     console.log(age);//Cannot access 'age' before initialization
+    //     var name = "Apple";
+    //     let age = 20;
+    // }
+    // fruit();
+
+    //45
+    // for(var i =0;i<3;i++){
+    //     setTimeout(()=>{
+    //         console.log(i);//3
+    //     },1)
+    // }
+
+    // for(let i =0;i<3;i++){
+    //     setTimeout(()=>{
+    //         console.log(i);//0 1 2
+    //     },1)
+    // }
+
+    //46
+    //console.log(+true);//1
+    //console.log(typeof(+true));// number
+    //console.log(!"Rekha");//false
+    //console.log(typeof("Rekha"));// string
+    //Note: while using + any of the value it will convert in number
+
+    //47
+    // let data = "size";
+    // const bird = {
+    //     size:"small",
+    // }
+    // console.log(bird[data]);//small -> bird[size]-> bird["size"]
+    // console.log(bird["size"]);//small
+    // console.log(bird.size);//small
+    // console.log(bird.data);// undefine
+
+    //48
+    // let c = {name:"Rekha"};
+    // let d;
+    // d = c ;
+    // c.name = "Narendra";
+    // console.log(d.name);//Narendra
+
+    //49
+    // var x ;
+    // var x = 10;
+    // console.log(x);//10
+
+    // let x ;
+    // let x = 10;
+    // console.log(x);//Identifier 'x' has already been declared
+
+    // var x ;
+    // let x = 10;
+    // console.log(x);//Identifier 'x' has already been declared
+
+    //50
+    // let a = 3;
+    // let b = new Number(3);
+    // console.log(b);//Number {3}
+    // console.log(typeof(b));//object
+    // console.log(a==b);//true
+    // console.log(a===b);//false
+
+    //51
+    // let name;
+    // nmae = {};
+    // console.log(nmae);//undefined
+    // console.log(nmae);//{}
+
+    //52
+    // function fruit(){
+    //     console.log("chiku");//chiku
+    // }
+    // fruit.name="Apple";// this property not create a issue
+    // fruit();
+
+    //53
+    // function sum(a,b){
+    //     return a+b;
+    // }
+    // console.log(sum(1,"2"));//12
+
+    //54
+    // let number = 0;
+    // console.log(number++);//0 ->0+1
+    // console.log(++number);//2 -> 1+1
+    // console.log(number);//2
+
+    //55
+    // function getAge(...args){
+    //     console.log(typeof(args));//object
+    // }
+    // getAge(21);
+
+    //56
+    // function getAge(){
+    //     "use strict";
+    //      age = 21;
+    //     console.log(age);// age is not defined at getAge 
+    // }
+    // getAge();
+
+    //57
+    //const sum = eval("10*10+5");
+    //console.log(sum);//105 ->(10*10)+5 -> 100+5 -> 105
+
+    //58
+    // Question: How long is cool_secret accessible???
+    // sessionStorage.setItem('cool_secret',123);
+    // session till active when tab are not closed.
+
+    //59
+    //const obj = {1:"a",2:"b",3:"c"};
+    //console.log(obj.hasOwnProperty("1"));//true
+    //console.log(obj.hasOwnProperty(1));//true
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

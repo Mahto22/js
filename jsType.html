@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Types in Javascript</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+
+    //    Type of javascript
+    //    ---------------------------
+    //    Number
+    //    String
+    //    Boolean
+    //    undefined
+    //    null
+    //    Symbol
+    //    primitive datatype
+    //    non-oprimitive datatype
+    //    object
+
+    let a = 1;
+    let b = "Rekha";
+    let c = true;
+    let d;
+    let e = "";
+    console.log(typeof(a));//number
+    console.log(typeof(b));//string
+    console.log(typeof(c));//boolean
+    console.log(typeof(d));//undefined
+    console.log(typeof(e));//string
+
+    const learn = {
+        name:"Rekha Mahto",
+        subs: "5uk",
+    }
+    learn.subj = "Javascript";
+
+    console.log(learn);//{name: 'Rekha Mahto', subs: '5uk', subj: 'Javascript'}
+    console.log(typeof({}));//object
+    console.log(typeof(function (){}));//function
+
+    const checking = ()=>{
+        console.log("checking");
+    }
+checking.lethaveFun = "all right i am an object";
+console.log(checking.lethaveFun);//all right i am an object
+    </script>
+</body>
+</html>

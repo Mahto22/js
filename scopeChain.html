@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope Chain</title>
+</head>
+<body>
+    <script>
+
+        // Lexical scopeing
+        var a = " hello guys";
+
+        function first(){
+            var b = "How are you...?";
+            console.log(c) // Uncaught ReferenceError: c is not defined
+            second();
+
+            function second(){
+                var c = " Myself Rekha Mahto";
+                console.log(a+b+c);// hello guysHow are you...? Myself Rekha Mahto
+                three();
+            }
+        }    
+
+            function three(){
+                var d = " please share my idea";
+                console.log(a+b+c+d); // Uncaught ReferenceError: b is not defined
+                console.log(a+c+d); // Uncaught ReferenceError: c is not defined
+                console.log(a+d); // hello guys please share my idea
+            }
+        first();
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Use Strict</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        //without use strict example
+        function add(a,b){
+            add = a+b;
+            console.log(add);// 109
+        }
+        add(49,60);
+
+        //with use strict example
+        "use strict"
+        function add(a,b){
+            add = a+b;
+            console.log(add); // Uncaught TypeError: add is not a function
+        }
+        add(49,60);
+
+        //with use strict example
+        "use strict"
+        function add(a,b){
+            var add = a+b;
+            console.log(add); // 109
+        }
+        add(49,60);
+
+        //with use strict example
+        "use strict"
+        function add(a,a){
+             add = a+b;
+            console.log(add); // Uncaught SyntaxError: Duplicate parameter name not allowed in this context
+        }
+        add(49,60);
+
+        //with use strict example
+        "use strict"
+        function add(a,a){
+            var  add = a+b; // a + 0
+            console.log(add); // Uncaught SyntaxError: Duplicate parameter name not allowed in this context
+        }
+        add(49,60);
+
+        "use strict"
+        function thisEx(){
+        var a = "hello";
+        console.log(a);//hello
+        console.log(this);// undefine
+    }
+    thisEx();
+    </script>
+</body>
+</html>

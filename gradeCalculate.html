@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Grade Calculation</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
+<style>
+    
+</style>
+</head>
+<body>
+     <div class="container">
+        <form method="post">
+            <div class="form-group">
+                <input type="text" id="wd" class="form-control" placeholder="Web Developer">
+            </div>
+            <div class="form-group">
+                <input type="text" id="comp" class="form-control" placeholder="Computer">
+            </div>
+            <div class="form-group">
+                <input type="text" id="phy" class="form-control" placeholder="Physics">
+            </div>
+            <div class="form-group">
+                <input type="text" id="maths" class="form-control" placeholder="Maths">
+            </div>
+            <div class="form-group">
+                <input type="text" id="eng" class="form-control" placeholder="English">
+            </div>
+            <div>
+                <input type="button" name="" value="ShowPercentage" class="app-form-button" onclick="calcy();">
+            </div>
+            <div class="app-form-group showdata">
+                <p id="showData"></p>
+            </div>
+        </form>
+     </div>
+
+     <script>
+        const calcy = ()=>{
+            let wd = document.getElementById('wd').value;
+            let comp = document.getElementById('comp').value;
+            let maths = document.getElementById('maths').value;
+            let phy = document.getElementById('phy').value;
+            let eng = document.getElementById('eng').value;
+            let grades = '';
+
+            //console.log(wd+comp+maths+phy+eng);
+            let totalGrades = parseFloat(wd) + parseFloat(comp) + parseFloat(maths) + parseFloat(phy) + parseFloat(eng);
+            alert(totalGrades);
+
+            let percentage = (totalGrades/500) * 100;
+            
+            alert(percentage);
+
+            if(percentage <= 100 && percentage >=80){
+                grades = 'A';
+            }else if(percentage <= 79 && percentage >=60){
+                grades = 'B';
+            }else if(percentage <= 59 && percentage >=40){
+                grades = 'C';
+            }else{
+                grades = 'F';
+            }
+
+            if(grades >=39.5){
+                document.getElementById('showData').innerHTML = `Out of 500 total grades id ${totalGrades} and percentage is ${percentage} %. <br> Your Grade id ${grades}. Congrates! YOu are Pass`;
+            }else{
+                document.getElementById('showData').innerHTML = `Out of 500 total grades id ${totalGrades} and percentage is ${percentage} %. <br> Your Grade id ${grades}. Sorry! YOu are Fail`;
+            }
+        }
+     </script>
+</body>
+</html>

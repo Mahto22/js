@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Execution Stack</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        var global = "added";
+        function a(){
+            var fa = "2nd function o/p1";
+            console.log(fa);
+            debugger;
+            b();
+            console.log("let's see when i will be on console");
+        }
+        function b(){
+            debugger;
+            console.log("2nd function o/p2");
+            c();
+        }
+        function c(){
+            debugger;
+            console.log("3rd function o/p3");
+        }
+            debugger;
+            a();
+
+//  2nd function o/p1
+//  2nd function o/p2
+//  3rd function o/p3
+//  let's see when i will be on console
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>hoising</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+
+        // hoisting example
+        sum(15,20);
+        function sum(a,b){
+            add = a+b;
+            console.log(add);
+        }
+
+        sub(15,20);
+        function sub(a,b){
+            sub = a-b;
+            console.log(sub);
+        }
+        
+
+        //In function expretion hoisting not working
+        sum(15,20); // Uncaught TypeError: sum is not a function
+        var sum = function sum(a,b){
+            add = a+b;
+            console.log(add);
+        }
+
+        var sum = function sum(a,b){
+            add = a+b;
+            console.log(add);
+        }
+        sum(15,20); // 35
+
+
+        // hoisting also not working
+        addition(59,69);//Uncaught ReferenceError: Cannot access 'addition' before initialization
+        const addition = (a,b) =>{
+            addition = a+b;
+            console.log(addition);
+        }
+
+        // hoisting  working here
+        const addition = (a,b) =>{
+            addition = a+b;
+            console.log(addition);
+        }
+        addition(59,69); //128
+
+        // not come in hoisting
+        var a ;
+        a = 10;
+        console.log(a); // 10
+
+    // hoisting working
+    console.log(a); // undefine
+    var a ;
+    a = 10;
+
+    var a =10;
+    var a = 20;
+    console.log(a) // 20
+
+    var a =10;
+    console.log(a) // 10
+    var a = 20;
+
+console.log(a);
+var a=10; // 10
+console.log(b);
+let b=20; // error
+console.log(c);
+const c=30; // error
+
+console.log("I am a "+job);//I am a undefined
+var job = "web developer";
+console.log("i am a "+job);//i am a web developer
+
+function whoAIm(){
+    console.log("I am a "+job);//I am a undefined
+    var job = "full stack";
+    console.log(" I am a "+ job);//i am a full stack
+}
+whoAIm();
+     
+    </script>
+</body>
+</html>
