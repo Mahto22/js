@@ -1,0 +1,47 @@
+<script>
+    //1.count repeated string ex: hello peter
+    // e count 3 times
+
+    // let str = 'hello';
+    // let strObj = {};
+    // let maxKey = '';
+
+    // for(let i = 0; i<str.length; i++){
+    //     //console.log(str[i]);
+    //     if(!strObj[str[i]]){
+    //         strObj[str[i]] = 0;
+    //     }
+    //     strObj[str[i]]++;
+    //     if(maxKey == '' || strObj[str[i]] > strObj[maxKey]){
+    //         maxKey = str[i];
+    //     }
+
+    // }
+    // console.log(maxKey); // l
+
+
+    //2.merge two array
+    let arr1 = [1,6,5,9,45];
+    let arr2 = [4,76,8,0,23,5];
+    let mergeArr = [];
+    for(let i = 0; i < arr1.length; i++){
+        mergeArr[i] = arr1[i];
+    }
+    for(let j = 0 ; j < arr2.length; j ++){
+        //console.log(arr1.length + j);
+        mergeArr[arr1.length + j] = arr2[j];
+    }
+    console.log(mergeArr);
+
+    // reverse array
+    let arr3 = [56,20,65,34,76];
+    let reverseArr = arr3.reverse();
+    console.log(reverseArr);
+
+    // merge two array quickly
+    let arr4 = [56,6,9,34,20,1,5];
+    let arr5 = [2,5,7,34,76,3];
+    let MergArr = [...arr4,...arr5];
+    console.log(mergeArr);
+
+</script>
